@@ -1,5 +1,6 @@
 import path from 'path'
 import fs from 'fs'
+import { marked } from 'marked'
 
 const absolutePath = path.resolve(__dirname, '../test/test.md')
 const fileContent = fs.readFileSync(absolutePath, "utf-8")
@@ -12,4 +13,4 @@ for (let i = 0; i < fileContent.length; i++) {
         console.log("空格")
     }
 }
-
+console.log(marked(fileContent))

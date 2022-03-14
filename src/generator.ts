@@ -1,6 +1,7 @@
 import { Canvas } from 'canvas'
 import path from 'path'
 import fs from 'fs'
+import { marked } from 'marked'
 
 function generatorCnavas(markdownContent: string) {
 
@@ -9,7 +10,7 @@ function generatorCnavas(markdownContent: string) {
 const absolutePath = path.resolve(__dirname, '../test/test.md')
 const fileContent = fs.readFileSync(absolutePath, "utf-8")
 // 饼图 方法定义
-export function GenCanvas(tokens: Array<string>) {
+export function GenCanvas(tokens: marked.TokensList) {
     var canvas = new Canvas(1240, 1754);
     var ctx = canvas.getContext('2d');
     ctx.fillStyle = "#fff"

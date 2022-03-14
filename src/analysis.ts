@@ -1,11 +1,9 @@
 import { GenCanvas } from "./generator"
-import { Lexer } from "./Lexer"
+import { Lexer } from "marked";
+
+
 export function analysis(src: string) {
-    try {
-        const tokens = Lexer.lex(src);
-        return GenCanvas(tokens);
-    } catch (e) {
-        e.message += '\nPlease report this to https://github.com/markedjs/marked.';
-        throw e;
-    }
+    const tokens = Lexer.lex(src)
+    console.log(tokens)
+    return GenCanvas(tokens);
 }

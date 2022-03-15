@@ -18,6 +18,7 @@
     "canvas": "^2.9.0",
     "cheerio": "^1.0.0-rc.10",
     "html2canvas": "^1.4.1",
+    "jsPDF": "npm:jspdf@^2.5.1",
     "marked": "^4.0.12"
   }
 }

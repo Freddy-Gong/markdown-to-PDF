@@ -12,16 +12,16 @@ export function GenCanvas(tokens: marked.TokensList) {
     ctx.fillRect(0, 0, 1240, 1754)//白色背景
     const pointer = new Pointer()
     while (tokens.length) {
-        pointer.draw(ctx, tokens[0].raw)
+        //@ts-ignore
+        pointer.draw(ctx, tokens.shift())
         // const type = tokens[0].type
         // if (type === "heading") {
         //     DrawObj[type](ctx, tokens[0].depth)
         // } else {
         //     DrawObj[type](ctx)
         // }
-        tokens.shift()
     }
-    console.log(canvas.toDataURL());//生成图片base64
+    //console.log(canvas.toDataURL());//生成图片base64
     canvas.createPNGStream().pipe(fs.createWriteStream(path.join(__dirname, 'test.png'))) // 生成本地图片(指定文件名)
 }
 

@@ -1,4 +1,5 @@
-import { NodeCanvasRenderingContext2DSettings } from "canvas";
+import { marked } from "marked";
+import { Rules } from './rule'
 export const DrawObj = {
     space: (canvas: CanvasRenderingContext2D) => { console.log("space"); return canvas },
     code: (canvas: CanvasRenderingContext2D) => { console.log("code"); return canvas },
@@ -35,11 +36,17 @@ export class Pointer {
         this.set = [offset.xoffset, offset.yoffset]
     }
 
-    draw(ctx: any, content: string) {
-
+    draw(ctx: any, content: marked.Token) {
+        //@ts-ignore
+        const typeStyle = content.type === "heading" ? Rules.heading[content.depth] : Rules[content.type]
         ctx.fillStyle = "black"
-        ctx.font = fontSize
-        ctx.fillText(content, this.set[0], this.set[1])
-        this.set[1] += 19
+        ctx.font = typeStyle.fontSize + "px serif"
+        if (content.type === "space") {
+            ctx.fillText(content.raw, this.set[0], this.set[1] + typeStyle.marginTop)
+        } else {
+            //@ts-ignore
+            ctx.fillText(content.text, this.set[0], this.set[1] + typeStyle.marginTop)
+        }
+        this.set[1] = this.set[1] + typeStyle.fontSize + typeStyle.marginBottom
     }
 }

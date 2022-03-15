@@ -81,5 +81,83 @@ export const Rules = {
         marginTop: 0.2 * em,
         marginBottom: 0.2 * em,
         blod: true
+    },
+    table: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
+    },
+    hr: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
+    },
+    blockquote: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
+    },
+    list_item: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
+    },
+    html: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
+    },
+    def: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
+    },
+    escape: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
+    },
+    image: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
+    },
+    link: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
+    },
+    em: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
+    },
+    codespan: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
+    },
+    br: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
+    },
+    del: {
+        fontSize: 1 * em,
+        marginTop: 0.2 * em,
+        marginBottom: 0.2 * em,
+        blod: true
     }
 }

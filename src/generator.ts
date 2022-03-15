@@ -2,7 +2,7 @@ import { Canvas } from 'canvas'
 import path from 'path'
 import fs from 'fs'
 import { marked } from 'marked'
-import { DrawObj, Pointer } from './draw'
+import { Pointer } from './draw'
 
 
 export function GenCanvas(tokens: marked.TokensList) {

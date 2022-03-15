@@ -1,4 +1,4 @@
-
+import { NodeCanvasRenderingContext2DSettings } from "canvas";
 export const DrawObj = {
     space: (canvas: CanvasRenderingContext2D) => { console.log("space"); return canvas },
     code: (canvas: CanvasRenderingContext2D) => { console.log("code"); return canvas },
@@ -20,4 +20,26 @@ export const DrawObj = {
     codespan: (canvas: CanvasRenderingContext2D) => { console.log("codespan"); return canvas },
     br: (canvas: CanvasRenderingContext2D) => { console.log("br"); return canvas },
     del: (canvas: CanvasRenderingContext2D) => { console.log("del"); return canvas },
+}
+
+const offset = {
+    xoffset: 20,
+    yoffset: 20
+}
+
+const fontSize = "19px serif"
+
+export class Pointer {
+    set: Array<number>
+    constructor() {
+        this.set = [offset.xoffset, offset.yoffset]
+    }
+
+    draw(ctx: any, content: string) {
+
+        ctx.fillStyle = "black"
+        ctx.font = fontSize
+        ctx.fillText(content, this.set[0], this.set[1])
+        this.set[1] += 19
+    }
 }

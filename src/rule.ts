@@ -72,8 +72,8 @@ export const Rules = {
     },
     code: {
         fontSize: 0.5 * em,
-        marginTop: 0.1 * em,
-        marginBottom: 0.1 * em,
+        marginTop: 0.5 * em,
+        marginBottom: 0.5 * em,
         blod: false
     },
     list: {

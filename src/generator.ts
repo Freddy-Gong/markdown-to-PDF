@@ -1,10 +1,8 @@
 import { Canvas } from 'canvas'
-import path from 'path'
-import fs from 'fs'
 import { marked } from 'marked'
 import { Pointer } from './draw'
 import { Rules } from './rule'
-
+import { jsPDF } from "jspdf";
 
 export function GenCanvas(tokens: marked.TokensList) {
     let canvas = new Canvas(1240, 1754);
@@ -25,6 +23,10 @@ export function GenCanvas(tokens: marked.TokensList) {
         }
     }
     //console.log(canvas.toDataURL());//生成图片base64
-    canvas.createPNGStream().pipe(fs.createWriteStream(path.join(__dirname, 'test.png'))) // 生成本地图片(指定文件名)
+    const imgData = canvas.toDataURL("image/jpeg", 1.0);
+    const pdf = new jsPDF();
+
+    pdf.addImage(imgData, 'JPEG', 0, 0, 1240, 1754);
+    pdf.save("./src/test.pdf");
 }
 
